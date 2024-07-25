@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63abc4c8f61da8e4ba266a2dc48f7a8a, type: 3}
+  m_Name: _01_Smallest
+  m_EditorClassIdentifier: 
+  sizeName: Smallest
+  gridPositionsUp:
+  - x: 0
+    z: 0
+  gridPositionsDown:
+  - x: 0
+    z: 0
