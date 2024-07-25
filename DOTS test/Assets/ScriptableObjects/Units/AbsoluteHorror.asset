@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d00f3964524b9fe49824904d4205dd55, type: 3}
   m_Name: AbsoluteHorror
   m_EditorClassIdentifier: 
-  unitName: 
-  prefab: {fileID: 0}
-  unitSize: {fileID: 0}
-  defaultMaxWalkDistance: 0
+  unitName: Absolute Horror
+  prefab: {fileID: 7795416632706844337, guid: 38de2c564aac97943a24fa828213b29b, type: 3}
+  unitSize: {fileID: 11400000, guid: 4c7c15ba7d69b1b4394d995889cbc499, type: 2}
+  defaultMaxWalkDistance: 3

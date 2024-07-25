@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d00f3964524b9fe49824904d4205dd55, type: 3}
   m_Name: Monkey
   m_EditorClassIdentifier: 
-  unitName: 
-  prefab: {fileID: 0}
-  unitSize: {fileID: 0}
-  defaultMaxWalkDistance: 0
+  unitName: Monkey
+  prefab: {fileID: 3633218897831469007, guid: 35191e57da748d340b8f513b77bec13d, type: 3}
+  unitSize: {fileID: 11400000, guid: a6918a1c7c79a254fb57d242f2f6ff67, type: 2}
+  defaultMaxWalkDistance: 4

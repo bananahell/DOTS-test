@@ -12,6 +12,94 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63abc4c8f61da8e4ba266a2dc48f7a8a, type: 3}
   m_Name: _22_Big
   m_EditorClassIdentifier: 
-  sizeName: 
-  gridPositionsUp: []
-  gridPositionsDown: []
+  sizeName: Big
+  gridPositionsUp:
+  - x: 0
+    z: 0
+  - x: -1
+    z: 0
+  - x: 1
+    z: 0
+  - x: 0
+    z: -1
+  - x: -2
+    z: 0
+  - x: -2
+    z: -1
+  - x: -1
+    z: -1
+  - x: 2
+    z: 0
+  - x: 2
+    z: -1
+  - x: 1
+    z: -1
+  - x: -1
+    z: 1
+  - x: 0
+    z: 1
+  - x: 1
+    z: 1
+  - x: -3
+    z: 0
+  - x: -3
+    z: 1
+  - x: -2
+    z: 1
+  - x: 2
+    z: 1
+  - x: 3
+    z: 1
+  - x: 3
+    z: 0
+  - x: 1
+    z: -2
+  - x: 0
+    z: -2
+  - x: -1
+    z: -2
+  gridPositionsDown:
+  - x: 0
+    z: 0
+  - x: 1
+    z: 0
+  - x: -1
+    z: 0
+  - x: 0
+    z: 1
+  - x: -1
+    z: -1
+  - x: 0
+    z: -1
+  - x: 1
+    z: -1
+  - x: 2
+    z: 0
+  - x: 2
+    z: 1
+  - x: 1
+    z: 1
+  - x: -1
+    z: 1
+  - x: -2
+    z: 1
+  - x: -2
+    z: 0
+  - x: -1
+    z: 2
+  - x: 0
+    z: 2
+  - x: 1
+    z: 2
+  - x: 3
+    z: 0
+  - x: 3
+    z: -1
+  - x: 2
+    z: -1
+  - x: -2
+    z: -1
+  - x: -3
+    z: -1
+  - x: -3
+    z: 0
