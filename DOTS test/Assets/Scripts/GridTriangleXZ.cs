@@ -64,6 +64,10 @@ public class GridTriangleXZ<TGridObject> {
     return this.height;
   }
 
+  public int GetMapSize() {
+    return this.height * this.width;
+  }
+
   public float GetTriangleSide() {
     return this.triangleSide;
   }

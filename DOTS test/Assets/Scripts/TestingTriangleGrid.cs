@@ -1,5 +1,7 @@
 using System;
-using System.Collections.Generic;
+using Unity.Collections;
+using Unity.Jobs;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class TestingTriangleGrid : MonoBehaviour {
@@ -22,7 +24,6 @@ public class TestingTriangleGrid : MonoBehaviour {
   private float triangleHeight;
   private float triangleHeightTwoThirds;
   private Unit monkeyUnit;
-  private List<PathNodeTriangleXZ> reachableNodes;
 
   public static TestingTriangleGrid Instance { get; private set; }
 
@@ -72,6 +73,35 @@ public class TestingTriangleGrid : MonoBehaviour {
     this.lastGridObject?.Hide();
     this.lastGridObject = GridTriangleXZ<PathNodeTriangleXZ>.Instance.GetGridObject(Mouse3D.GetMouseWorldPosition());
     this.lastGridObject?.Show();
+    if (Input.GetMouseButtonDown(1)) {
+      Vector3 mousePosition = Mouse3D.GetMouseWorldPosition();
+      GridTriangleXZ<PathNodeTriangleXZ>.Instance.GetXZ(mousePosition, out int endX, out int endZ);
+      NativeList<int2> resultPath = new(Allocator.TempJob);
+      FindPathJob findPathJob = new() {
+        startPosition = new int2(this.monkeyUnit.x, this.monkeyUnit.z),
+        endPosition = new int2(endX, endZ),
+        gridSize = GridTriangleXZ<PathNodeTriangleXZ>.Instance.GetMapSize(),
+        triangleSide = GridTriangleXZ<PathNodeTriangleXZ>.Instance.GetTriangleSide(),
+        triangleHeight = GridTriangleXZ<PathNodeTriangleXZ>.Instance.GetTriangleHeight(),
+        path = resultPath
+      };
+      JobHandle jobHandle = findPathJob.Schedule();
+      jobHandle.Complete();
+      if (!resultPath.IsEmpty) {
+        int2 lastNode = resultPath.ElementAt(0);
+        Vector3 lastPosition = GridTriangleXZ<PathNodeTriangleXZ>.Instance.GetWorldPosition(lastNode.x, lastNode.y);
+        this.monkeyUnit.MoveUnit(lastPosition);
+        Debug.Log("Path created!");
+        Debug.Log("----------------------------------------------------------------");
+        for (int i = 0; i < resultPath.Length; ++i) {
+          Debug.Log("--");
+          Debug.Log(resultPath.ElementAt(i).x.ToString());
+          Debug.Log(resultPath.ElementAt(i).y.ToString());
+        }
+        Debug.Log("----------------------------------------------------------------");
+      }
+      resultPath.Dispose();
+    }
     if (Input.GetKeyDown(KeyCode.F)) {
       PathNodeTriangleXZ node = GridTriangleXZ<PathNodeTriangleXZ>.Instance.GetGridObject(Mouse3D.GetMouseWorldPosition());
       node.SetIsWalkable(false);
